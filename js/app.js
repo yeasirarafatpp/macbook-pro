@@ -9,7 +9,13 @@ function costForExtra(extra, cost) {
         const totalPriceText = totalPrice.innerText;
         const totalPriceRes = parseInt(totalPriceText);
         totalPrice.innerText = totalPriceRes + newMemoryValue;
+        // This is for footer Price
+        const footPrice = document.getElementById('footer-price');
+        const footPriceText = footPrice.innerText;
+        const footPriceAmount = parseInt(footPriceText);
+        footPrice.innerText = totalPriceRes + newMemoryValue;
     }
+
 }
 // Increase Extra Memory Cost
 document.getElementById('extra-memory').addEventListener('click', function () {
@@ -26,7 +32,6 @@ document.getElementById('tb-ssd').addEventListener('click', function () {
 document.getElementById('extra-delivery').addEventListener('click', function () {
     costForExtra('delivery', 20);
 });
-
 // This Function is for Default Money
 function defaultMoney(product) {
     const previousAmount = document.getElementById(product + '-total');
@@ -37,6 +42,11 @@ function defaultMoney(product) {
     const decreaseTotalPriceText = decreaseTotalPrice.innerText;
     const decreaseTotalPriceRes = parseInt(decreaseTotalPriceText);
     decreaseTotalPrice.innerText = decreaseTotalPriceRes - previousAmountResult;
+    // This is for footer Price
+    const footPrice = document.getElementById('footer-price');
+    const footPriceText = footPrice.innerText;
+    const footPriceAmount = parseInt(footPriceText);
+    footPrice.innerText = decreaseTotalPriceRes - previousAmountResult;
 }
 // Default Memory Amount
 document.getElementById('default-memory').addEventListener('click', function () {
@@ -50,19 +60,20 @@ document.getElementById('default-storage').addEventListener('click', function ()
 document.getElementById('default-delivery').addEventListener('click', function () {
     defaultMoney('delivery');
 });
-
 // Coupon Code apply
 document.getElementById('coupon-btn').addEventListener('click', function () {
     const couponCode = document.getElementById('coupon-code').value;
-
     const couponPrice = document.getElementById('total-price');
     const couponPriceText = couponPrice.innerText;
     let couponPriceAmount = parseFloat(couponPriceText);
     if (couponCode == 'stevekaku') {
         newCouponPriceAmount = couponPriceAmount / 100 * 20;
-
         couponPrice.innerText = couponPriceAmount - newCouponPriceAmount;
+        // This is for footer Price
+        const footPrice = document.getElementById('footer-price');
+        const footPriceText = footPrice.innerText;
+        const footPriceAmount = parseInt(footPriceText);
+        footPrice.innerText = couponPriceAmount - newCouponPriceAmount;
     }
     document.getElementById('coupon-code').value = '';
-
 });
