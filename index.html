@@ -30,17 +30,17 @@
                         Air uses a version of the M1 with a 7-core GPU).</p>
                     <!-- Memory -->
                     <h4>Memory</h4>
-                    <button>8 GB unified Memory</button>
-                    <button>16 GB unified Memory</button>
+                    <button id="default-memory">8 GB unified Memory</button>
+                    <button id="extra-memory">16 GB unified Memory</button>
                     <!-- Storage -->
                     <h4 class="pt-3">Storage</h4>
-                    <button>256 GB SSD Storage</button>
-                    <button>512 GB SSD Storage</button>
-                    <button>1 TB SSD Storage</button>
+                    <button id="default-storage">256 GB SSD Storage</button>
+                    <button id="mid-ssd">512 GB SSD Storage</button>
+                    <button id="tb-ssd">1 TB SSD Storage</button>
                     <!-- Delivery -->
                     <h4 class="pt-3">Choose Your Delivery Option</h4>
-                    <button>Friday Aug 25 Free Prime Delivery</button>
-                    <button>Friday Aug 21 Delivery Cose $20</button>
+                    <button id="default-delivery">Friday Aug 25 Free Prime Delivery</button>
+                    <button id="extra-delivery">Friday Aug 21 Delivery Cose $20</button>
                     <!-- Calculation part -->
                     <div class="row">
                         <div class="col">
@@ -49,50 +49,50 @@
                                     <h5>Best Price</h5>
                                 </div>
                                 <div class="col-3">
-                                    <h5>$1299</h5>
-                                </div>
-                                <hr>
-                            </div>
-                            <div class="row pt-3">
-                                <div class="col-10">
-                                    <h5>Extra Memory Cost</h5>
-                                </div>
-                                <div class="col-2">
-                                    <h5>$0</h5>
-                                </div>
-                                <hr>
-                            </div>
-                            <div class="row pt-3">
-                                <div class="col-10">
-                                    <h5>Extra Storage Cost</h5>
-                                </div>
-                                <div class="col-2">
-                                    <h5>$0</h5>
-                                </div>
-                                <hr>
-                            </div>
-                            <div class="row pt-3">
-                                <div class="col-10">
-                                    <h5>Delivery Charge</h5>
-                                </div>
-                                <div class="col-2">
-                                    <h5>$0</h5>
+                                    <h5>$ <span id="best-price">1299</span></h5>
                                 </div>
                                 <hr>
                             </div>
                             <div class="row pt-3">
                                 <div class="col-9">
-                                    <h5>Total Price</h5>
+                                    <h5>Extra Memory Cost</h5>
                                 </div>
                                 <div class="col-3">
-                                    <h5>$1299</h5>
+                                    <h5>$ <span id="memory-total">0</span></h5>
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="row pt-3">
+                                <div class="col-9">
+                                    <h5>Extra Storage Cost</h5>
+                                </div>
+                                <div class="col-3">
+                                    <h5>$ <span id="ssd-total">0</span></h5>
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="row pt-3">
+                                <div class="col-9">
+                                    <h5>Delivery Charge</h5>
+                                </div>
+                                <div class="col-3">
+                                    <h5>$ <span id="delivery-total">0</span></h5>
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="row pt-3">
+                                <div class="col-8">
+                                    <h5>Total Price</h5>
+                                </div>
+                                <div class="col-4">
+                                    <h5>$ <span id="total-price">1299</span></h5>
                                 </div>
                                 <hr>
                             </div>
                             <div class=" pt-3">
                                 <h5>Add Promo Code</h5>
-                                <input type="text">
-                                <button class="btn btn-danger d-inline">Apply</button>
+                                <input id="coupon-code" type="text">
+                                <button id="coupon-btn" class="btn btn-danger d-inline">Apply</button>
                             </div>
                         </div>
                         <div class="col">
@@ -103,7 +103,7 @@
         </div>
         <!-- All Total Calculation -->
         <hr class="w-75 mx-auto">
-        <h1 class="text-center">Total: $1299</h1>
+        <h1 class="text-center">Total: $ <span id="total-price">1299</span></h1>
     </section>
     <script src="js/app.js"></script>
 </body>
