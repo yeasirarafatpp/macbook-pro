@@ -2,28 +2,28 @@ function costForExtra(extra, cost) {
     const extraPurchase = document.getElementById(extra + '-total');
     const extraPurchaseText = extraPurchase.innerText;
     const extraPurchaseUpdate = parseInt(extraPurchaseText) + 1;
-    const newMemoryValue = cost * extraPurchaseUpdate;
-    if (newMemoryValue <= cost) {
-        extraPurchase.innerText = newMemoryValue;
+    const newPurchaseValue = cost * extraPurchaseUpdate;
+    if (newPurchaseValue <= cost) {
+        extraPurchase.innerText = newPurchaseValue;
         const totalPrice = document.getElementById('total-price');
         const totalPriceText = totalPrice.innerText;
         const totalPriceRes = parseInt(totalPriceText);
-        totalPrice.innerText = totalPriceRes + newMemoryValue;
+        totalPrice.innerText = totalPriceRes + newPurchaseValue;
         // This is for footer Price
         const footPrice = document.getElementById('footer-price');
         const footPriceText = footPrice.innerText;
         const footPriceAmount = parseInt(footPriceText);
-        footPrice.innerText = totalPriceRes + newMemoryValue;
+        footPrice.innerText = totalPriceRes + newPurchaseValue;
     }
 
 }
 // Increase Extra Memory Cost
 document.getElementById('extra-memory').addEventListener('click', function () {
-    costForExtra('memory', 180)
+    costForExtra('memory', 180);
 });
 // Increase Extra Storage Cost
 document.getElementById('mid-ssd').addEventListener('click', function () {
-    costForExtra('ssd', 100)
+    costForExtra('ssd', 100);
 });
 document.getElementById('tb-ssd').addEventListener('click', function () {
     costForExtra('ssd', 180);
